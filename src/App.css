@@ -1,3 +1,54 @@
 .App {
   text-align: center;
 }
+
+/* background-color: #92db92; */
+
+
+html{
+  max-width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+/* HEADER */
+.header_background {
+  background-color: #92db92;
+  width: auto;
+}
+
+.header {
+  background-color: #92db92;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 20% 130%;
+  grid-template-areas: 'title login';
+}
+
+.header__link {
+  grid-area: title;
+  margin-right: auto;
+  color: black;
+}
+
+.header__title {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header__login {
+  margin: auto;
+  color: black;
+  grid-area: login;
+}
+
+.login__text {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
