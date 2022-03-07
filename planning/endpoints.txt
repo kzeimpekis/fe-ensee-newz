@@ -1,0 +1,21 @@
+"endpoints": {
+    "topics": [
+        "GET: /"
+    ],
+    "articles": [
+        "GET: /",
+        "POST: /",
+        "GET: /:article_id",
+        "PATCH: /:article_id",
+        "GET: /:article_id/comments",
+        "POST: /:article_id/comments"
+    ],
+    "comments": [
+        "DELETE: /comments/:comment_id",
+        "PATCH: /comments/:comment_id"
+    ],
+    "users": [
+        "GET: /users",
+        "GET: /users/:username"
+    ]
+}

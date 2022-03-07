@@ -1,0 +1,14 @@
+As user, I should be able to:
+ - connect to my account and see my icon
+ - view a list of all articles
+ - search by specific topic on the search bar
+ - use a "home" button to return to the initial page
+ - select a topic and display only these articles
+ - sort by (date, topic, votes, author, comments)
+ - view an individual article
+ - view an individual's article comments
+ - post a new comment
+ - delete my own comments
+ - vote for articles (only once)
+ - vote for comments (only once)
+ - see descriptive errors if/when they occured
