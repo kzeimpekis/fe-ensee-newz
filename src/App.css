@@ -53,6 +53,22 @@ html{
   font-weight: 500;
 }
 
+/* TopicsList */
+.topics-list {
+  padding-left: 0;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #92db92;
+}
+
+.topic {
+  margin-left: 0;
+}
+
+.topic__link {
+  margin-left: 10%;
+}
+
 /* Articles */
 .articles {
   width: 800px;
