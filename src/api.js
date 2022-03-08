@@ -8,3 +8,10 @@ export const getArticles = () => {
     return data.articles
   });
 };
+
+export const getTopics = () => {
+  return axios.get(`${baseURL}/topics`).then(({data}) => {
+    // console.log(data.topics)
+    return data.topics
+  });
+}
