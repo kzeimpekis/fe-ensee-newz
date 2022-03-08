@@ -2,37 +2,93 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* background-color: #92db92; */
+
+
+html{
+  max-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.link {
+  text-decoration: none;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* HEADER */
+.header-background {
+  background-color: #92db92;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  background-color: #92db92;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 20% 130%;
+  grid-template-areas: 'title login';
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__link {
+  grid-area: title;
+  margin-right: auto;
+  color: black;
+}
+
+.header__title {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header__login {
+  margin: auto;
+  color: black;
+  grid-area: login;
+}
+
+.login__text {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Articles */
+.articles {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-item {
+  margin: 0 auto 20px auto;
+  width: 50rem;
+  height: 10rem;
+  background-color: #c7dac7;
+  border-radius: 8px;
+}
+
+.articleCard__info {
+  margin-right: auto;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.articleCard__title {
+  margin-right: auto;
+  margin-left: 15px;
+  font-size: 25px;
+  text-align: left;
+}
+
+button {
+  background-color: #92db92;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.938rem;
+  cursor: pointer;
+  margin-left: 0.938rem;
+  margin-bottom: 0.938rem;
 }
