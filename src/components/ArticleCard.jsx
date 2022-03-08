@@ -1,4 +1,4 @@
-export default function ArticleItem({article}) {
+export default function ArticleCard({article}) {
 
   const topic = article.topic
   const author = article.author
