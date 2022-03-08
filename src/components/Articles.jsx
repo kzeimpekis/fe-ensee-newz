@@ -4,21 +4,29 @@ import ArticleItem from './ArticleItem';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
         getArticles().then((articlesFromApi) => {
           setArticles(articlesFromApi);
+          setIsLoading(false);
         });
       }, []);
 
     return (
-        <section>
+        <div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <section className="articles">
             {articles.map((article) => {
                 console.log(article)
                 return <ArticleItem key={article.article_id} article={article}/>
                 }
             )}
         </section>
+      )}
+      </div>
     )
 
 }

@@ -15,9 +15,9 @@ html{
 }
 
 /* HEADER */
-.header_background {
+.header-background {
   background-color: #92db92;
-  width: auto;
+  width: 100%;
 }
 
 .header {
@@ -50,5 +50,45 @@ html{
 .login__text {
   margin: 10px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+/* Articles */
+.articles {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-item {
+  margin: 0 auto 20px auto;
+  width: 50rem;
+  height: 10rem;
+  background-color: #c7dac7;
+  border-radius: 8px;
+}
+
+.articleCard__info {
+  margin-right: auto;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.articleCard__title {
+  margin-right: auto;
+  margin-left: 15px;
+  font-size: 25px;
+  text-align: left;
+}
+
+button {
+  background-color: #92db92;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.938rem;
+  cursor: pointer;
+  margin-left: 0.938rem;
+  margin-bottom: 0.938rem;
 }
