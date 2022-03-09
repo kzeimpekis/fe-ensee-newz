@@ -5,17 +5,25 @@ import IndividualArticleCard from "./IndividualArticleCard";
 
 const IndividialArticle = () => {
     const {article_id} = useParams();
+    const [isLoading, setIsLoading] = useState(true);
     const [individualArticle, setIndividualArticle] = useState([])
 
     useEffect(() => {
-        getArticleById(article_id).then((result) => {
-            // console.log(result)
-            setIndividualArticle(result)
+        setIsLoading(true)
+        getArticleById(article_id).then((individualArticleFromApi) => {
+            setIndividualArticle(individualArticleFromApi)
+            setIsLoading(false);
         })
-    })
+    }, [article_id])
 
     return (
+        <div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
         <IndividualArticleCard individualArticle={individualArticle}/>
+      )}
+      </div>
     )
 }
 
