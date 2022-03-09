@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getArticleById } from "../api";
+import Comments from "./Comments";
 import IndividualArticleCard from "./IndividualArticleCard";
 
 const IndividualArticle = () => {
@@ -21,7 +22,10 @@ const IndividualArticle = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
+        <div>
         <IndividualArticleCard individualArticle={individualArticle}/>
+        <Comments />
+        </div>
       )}
       </div>
     )
