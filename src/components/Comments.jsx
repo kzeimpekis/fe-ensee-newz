@@ -4,11 +4,10 @@ import { getArticleCommentsById } from "../api";
 import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
 
-const Comments = ({comment_count}) => {
+const Comments = ({comment_count, commentCounter, setCommentCounter}) => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const {article_id} = useParams();
-    const [commentCounter, setCommentCounter] = useState(parseInt(comment_count));
 
     useEffect(() => {
         setIsLoading(true)
@@ -24,9 +23,12 @@ const Comments = ({comment_count}) => {
         <p>Loading...</p>
       ) : (
         <section className="comments-list">
-            <CommentAdder comments={comments} setComments={setComments} setCommentCounter={setCommentCounter}/>
+            <CommentAdder comments={comments} 
+                          setComments={setComments} 
+                          commentCounter={commentCounter}
+                          setCommentCounter={setCommentCounter}/>
             {comments.map((comment) => {
-                return (<CommentCard comment={comment} key={comment.comment_id}/>)}
+                return (<CommentCard comment={comment} key={comment.comment_id} />)}
             )}
         </section>
       )}

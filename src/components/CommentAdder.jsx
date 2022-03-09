@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { postCommentByArticleId } from "../api";
 
-const CommentAdder = ({comments, setComments, setCommentCounter}) => {
+const CommentAdder = ({comments, setComments, commentCounter, setCommentCounter}) => {
     const [commentBody, setCommentBody] = useState([""])
     const {article_id} = useParams();
 
@@ -13,13 +13,14 @@ const CommentAdder = ({comments, setComments, setCommentCounter}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setCommentBody("");
+        setCommentCounter(commentCounter += 1);
         postCommentByArticleId(article_id, {
             username: "jessjelly",
             body: commentBody})
         .then((comment) => {
             setComments([comment, ...comments])
             setCommentBody("")
-            setCommentCounter((current) => current + 1);
+            
         })
     }
 
