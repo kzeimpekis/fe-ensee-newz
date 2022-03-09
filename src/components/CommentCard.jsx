@@ -15,7 +15,6 @@ const CommentCard = ({comment}) => {
             <button className='commentCard__votesButton'>Votes: {votes}</button>
         </section>
     )
-
 }
 
 export default CommentCard;

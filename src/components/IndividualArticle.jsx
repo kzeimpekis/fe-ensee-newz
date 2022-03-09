@@ -8,6 +8,7 @@ const IndividualArticle = () => {
     const {article_id} = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [individualArticle, setIndividualArticle] = useState([])
+    // const [commentCounter, setCommentCounter] = useState(parseInt(comment_count));
 
     useEffect(() => {
         setIsLoading(true)
@@ -24,7 +25,7 @@ const IndividualArticle = () => {
       ) : (
         <div>
         <IndividualArticleCard individualArticle={individualArticle}/>
-        <Comments />
+        <Comments comment_count={individualArticle.comment_count}/>
         </div>
       )}
       </div>
