@@ -7,7 +7,7 @@ export default function ArticleCard({article}) {
   const comments = article.comment_count
 
   return (
-    <section className="article-item">
+    <section className="article-card">
       <p className='articleCard__info'>
           <strong>{topic}</strong> posted by{' '}
           <strong>{author}</strong> on{' '}

@@ -76,7 +76,7 @@ html{
   margin-right: auto;
 }
 
-.article-item {
+.article-card {
   margin: 0 auto 20px auto;
   width: 50rem;
   height: 10rem;
@@ -107,4 +107,19 @@ button {
   cursor: pointer;
   margin-left: 0.938rem;
   margin-bottom: 0.938rem;
+}
+
+.individualArticle-card {
+  margin: 0 auto 20px auto;
+  width: 50rem;
+  height: 15rem;
+  background-color: #c7dac7;
+  border-radius: 8px;
+}
+
+.articleCard__title {
+  margin-right: auto;
+  margin-left: 15px;
+  font-size: 15px;
+  text-align: left;
 }
