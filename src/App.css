@@ -109,10 +109,12 @@ button {
   margin-bottom: 0.938rem;
 }
 
+
+
 .individualArticle-card {
   margin: 0 auto 20px auto;
-  width: 50rem;
-  height: 15rem;
+  width: 80%;
+  height: 15%;
   background-color: #c7dac7;
   border-radius: 8px;
 }
