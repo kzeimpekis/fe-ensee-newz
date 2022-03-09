@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { getArticleById } from "../api";
 import IndividualArticleCard from "./IndividualArticleCard";
 
-const IndividialArticle = () => {
+const IndividualArticle = () => {
     const {article_id} = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [individualArticle, setIndividualArticle] = useState([])
@@ -27,4 +27,4 @@ const IndividialArticle = () => {
     )
 }
 
-export default IndividialArticle
+export default IndividualArticle
