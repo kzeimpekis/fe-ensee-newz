@@ -1,11 +1,11 @@
-const IndividualArticleCard = ({individualArticle}) => {
+const IndividualArticleCard = ({individualArticle, commentCounter, setCommentCounter}) => {
     
     const topic = individualArticle.topic
     const author = individualArticle.author
     const date = individualArticle.created_at.slice(0, 10)
     const body = individualArticle.body
     const votes = individualArticle.votes
-    const comments = individualArticle.comment_count
+    const comments = commentCounter
     
     return (
         <section className="individualArticle-card">

@@ -109,14 +109,17 @@ button {
   margin-bottom: 0.938rem;
 }
 
-
-
 .individualArticle-card {
   margin: 0 auto 20px auto;
   width: 80%;
   height: 15%;
   background-color: #c7dac7;
   border-radius: 8px;
+}
+
+.comment-submit {
+  margin: 0 auto 20px auto;
+  width: 80%;
 }
 
 .articleCard__title {

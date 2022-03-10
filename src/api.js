@@ -29,3 +29,10 @@ export const getArticleCommentsById = (article_id) => {
      return data.comments
   });
 };
+
+export const postCommentByArticleId = (article_id, commentBody) => {
+  return axios.post(`${baseURL}/articles/${article_id}/comments`, commentBody).then(({data}) => {
+    // console.log(data.comment)
+    return data.comment;
+  })
+}
