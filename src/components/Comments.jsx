@@ -28,7 +28,11 @@ const Comments = ({comment_count, commentCounter, setCommentCounter}) => {
                           commentCounter={commentCounter}
                           setCommentCounter={setCommentCounter}/>
             {comments.map((comment) => {
-                return (<CommentCard comment={comment} key={comment.comment_id} />)}
+                return (<CommentCard comment={comment} 
+                                     setComments={setComments}
+                                     commentCounter={commentCounter}
+                                     setCommentCounter={setCommentCounter} 
+                                     key={comment.comment_id} />)}
             )}
         </section>
       )}
