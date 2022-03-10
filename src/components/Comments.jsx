@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getArticleCommentsById } from "../api";
 import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
@@ -8,6 +8,7 @@ const Comments = ({comment_count, commentCounter, setCommentCounter}) => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const {article_id} = useParams();
+    const navigate = useNavigate()
 
     useEffect(() => {
         setIsLoading(true)
@@ -15,7 +16,14 @@ const Comments = ({comment_count, commentCounter, setCommentCounter}) => {
             setComments(commentsFromApi)
             setIsLoading(false);
         })
-    }, [article_id])
+        .catch(({ response }) => {
+          if (response.status === 404) {
+            navigate("/Error404");
+          } else {
+            navigate("/Error500");
+          }
+        });
+    }, [article_id, navigate])
 
     return (
         <div>

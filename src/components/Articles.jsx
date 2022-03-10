@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getArticles } from '../api';
 import ArticlesList from './ArticlesList';
 import Sorting from './Sorting';
@@ -10,6 +10,7 @@ const Articles = () => {
     const {topic_slug} = useParams();
     const [sortingAttribute, setSortingAttribute] = useState('created_at');
     const [sortingOrder, setSortingOrder] = useState('desc');
+    const navigate = useNavigate();
     
     useEffect(() => {
         setIsLoading(true)
@@ -20,8 +21,14 @@ const Articles = () => {
         }).then((articlesFromApi) => {
           setArticles(articlesFromApi);
           setIsLoading(false);
+        }).catch(({ response }) => {
+          if (response.status === 404) {
+            navigate("/Error404");
+          } else {
+            navigate("/Error500");
+          }
         });
-      }, [topic_slug, sortingAttribute, sortingOrder]);
+      }, [topic_slug, sortingAttribute, sortingOrder, navigate]);
 
     return (
         <div>

@@ -1,5 +1,5 @@
 const Sorting = ({ sortingAttribute, setSortingAttribute, sortingOrder, setSortingOrder }) => {
-    const availableSortingAttributes = ['created_at', 'title', 'author', 'votes'];
+    const availableSortingAttributes = ['created_at', 'title', 'author', 'votes', 'comment_count'];
   
     const handleSortChange = (newSortingAttribute) => {
       if (newSortingAttribute === sortingAttribute) {
@@ -24,7 +24,8 @@ const Sorting = ({ sortingAttribute, setSortingAttribute, sortingOrder, setSorti
               >
                 {attribute === 'created_at' ? 'date' 
                     : attribute === 'author' ? 'user'
-                     : attribute}
+                     : attribute === 'comment_count' ? 'comments'
+                       : attribute}
                 {sortingOrder === 'desc' && sortingAttribute === attribute ? '▼'
                   : sortingOrder === 'asc' && sortingAttribute === attribute ? '▲'
                     : null}
