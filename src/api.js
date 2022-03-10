@@ -36,3 +36,10 @@ export const postCommentByArticleId = (article_id, commentBody) => {
     return data.comment;
   })
 }
+
+export const deleteCommentById = (comment_id) => {
+  return axios.delete(`${baseURL}/comments/${comment_id}`).then(({data}) => {
+    // console.log(data.comment)
+    return data.comment;
+  })
+}
