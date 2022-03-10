@@ -109,6 +109,13 @@ button {
   margin-bottom: 0.938rem;
 }
 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .individualArticle-card {
   margin: 0 auto 20px auto;
   width: 80%;
@@ -127,4 +134,25 @@ button {
   margin-left: 15px;
   font-size: 15px;
   text-align: left;
+}
+
+.user__signout {
+  /* display: inline; */
+  width: 1%;
+  /* height: 1%; */
+  /* margin: 0;
+  padding: 0;
+  padding-left: 10px; */
+}
+
+.header__login {
+  margin: auto;
+  color: black;
+}
+
+.header__user {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  margin-left: 50%;
 }

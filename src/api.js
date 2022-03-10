@@ -57,3 +57,10 @@ export const patchVotes = (target, target_id, increment) => {
     return data[target].votes;
   })
 }
+
+export const getUsers = () => {
+  return axios.get(`${baseURL}/users`).then(({data}) => {
+    // console.log(data.users)
+    return data.users
+  })
+}

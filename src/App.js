@@ -1,12 +1,25 @@
 import './App.css';
-import { BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Articles from './components/Articles';
 import TopicsList from './components/TopicsList';
 import IndividualArticle from './components/IndividualArticle';
+import { useState } from 'react';
+import { UserContext } from './contexts/UserContext'
 
 function App() {
+  const [username, setUsername] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loginFailure, setLoginFailure] = useState(false);
+  
   return (
+    <UserContext.Provider value={{ 
+          username, 
+          setUsername,
+          isLoggedIn,
+          setIsLoggedIn,
+          loginFailure,
+          setLoginFailure }}>
     <BrowserRouter>
     <div className="App">
       <Header />
@@ -19,6 +32,7 @@ function App() {
       </Routes>
     </div>
    </BrowserRouter>
+   </UserContext.Provider>
   );
 }
 

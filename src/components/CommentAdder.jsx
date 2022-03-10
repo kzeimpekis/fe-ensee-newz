@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { postCommentByArticleId } from "../api";
+import { UserContext } from "../contexts/UserContext";
 
 const CommentAdder = ({comments, setComments, commentCounter, setCommentCounter}) => {
     const [commentBody, setCommentBody] = useState([""])
     const {article_id} = useParams();
-
+    const { username } = useContext(UserContext);
     useEffect(() => {
         setCommentBody(commentBody)
     }, [commentBody])
@@ -15,12 +16,11 @@ const CommentAdder = ({comments, setComments, commentCounter, setCommentCounter}
         setCommentBody("");
         setCommentCounter(commentCounter += 1);
         postCommentByArticleId(article_id, {
-            username: "jessjelly",
+            username: username,
             body: commentBody})
         .then((comment) => {
             setComments([comment, ...comments])
-            setCommentBody("")
-            
+            setCommentBody("") 
         })
     }
 
