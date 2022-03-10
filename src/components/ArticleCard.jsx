@@ -1,5 +1,5 @@
 export default function ArticleCard({article}) {
-
+  
   const topic = article.topic
   const author = article.author
   const date = article.created_at.slice(0, 10)

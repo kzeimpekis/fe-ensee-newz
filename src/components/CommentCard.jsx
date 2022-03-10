@@ -1,4 +1,5 @@
 import { deleteCommentById } from "../api";
+import VotingButtons from "./VotingButtons";
 
 const CommentCard = ({comment, setComments, commentCounter, setCommentCounter}) => {
 
@@ -15,7 +16,8 @@ const CommentCard = ({comment, setComments, commentCounter, setCommentCounter}) 
                 <strong>{date}</strong>
             </p>
             <p className='commentCard__body'>{body}</p>
-            <button className='commentCard__votesButton'>Votes: {votes}</button>
+            {/* <button className='commentCard__votesButton'>Votes: {votes}</button> */}
+            <VotingButtons {...{ target: "comment", target_id: comment_id, votes }} />
             <button className='commentCard__deleteButton' 
                     onClick={() => {
                         deleteCommentById(comment_id)

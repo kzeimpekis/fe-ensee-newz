@@ -43,3 +43,17 @@ export const deleteCommentById = (comment_id) => {
     return data.comment;
   })
 }
+
+export const patchVotes = (target, target_id, increment) => {
+  let patchObject = { inc_votes: increment };
+  let targetPath = "";
+  if (target === "comment") {
+    targetPath = `${baseURL}/comments/${target_id}`;
+  } else if (target === "article") {
+    targetPath = `${baseURL}/articles/${target_id}`;
+  }
+  return axios.patch(targetPath, patchObject).then(({data}) => {
+    // console.log(data[target].votes)
+    return data[target].votes;
+  })
+}
