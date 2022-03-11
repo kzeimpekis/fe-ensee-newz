@@ -12,7 +12,7 @@ function App() {
   const [username, setUsername] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginFailure, setLoginFailure] = useState(false);
-  
+
   return (
     <UserContext.Provider value={{ 
           username, 

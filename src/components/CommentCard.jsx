@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { deleteCommentById } from "../api";
+import { UserContext } from "../contexts/UserContext";
 import VotingButtons from "./VotingButtons";
 
 const CommentCard = ({comment, setComments, commentCounter, setCommentCounter}) => {
@@ -8,6 +10,7 @@ const CommentCard = ({comment, setComments, commentCounter, setCommentCounter}) 
     const date = comment.created_at.slice(0, 10)
     const body = comment.body
     const votes = comment.votes
+    const {username} = useContext(UserContext);
 
     return (
         <section className="comment-card">
@@ -20,11 +23,13 @@ const CommentCard = ({comment, setComments, commentCounter, setCommentCounter}) 
             <VotingButtons {...{ target: "comment", target_id: comment_id, votes }} />
             <button className='commentCard__deleteButton' 
                     onClick={() => {
-                        deleteCommentById(comment_id)
-                        setComments((currentComments) => {
-                            return currentComments.filter((comment) => comment.comment_id !== comment_id)
-                        })
-                        setCommentCounter(commentCounter -= 1);
+                        if (author === username) {
+                            deleteCommentById(comment_id)
+                            setComments((currentComments) => {
+                                return currentComments.filter((comment) => comment.comment_id !== comment_id)
+                            })
+                            setCommentCounter(commentCounter -= 1);
+                        }
                     }}>Delete</button>
         </section>
     )
