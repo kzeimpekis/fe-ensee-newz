@@ -30,6 +30,7 @@ const CommentCard = ({comment, setComments, commentCounter, setCommentCounter}) 
                             })
                             setCommentCounter(commentCounter -= 1);
                         }
+                        else {alert("No authorisation to delete this comment!")}
                     }}>Delete</button>
         </section>
     )
