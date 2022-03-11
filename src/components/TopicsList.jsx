@@ -4,7 +4,7 @@ import { getTopics } from '../api';
 
 const TopicsList = () => {
     const [topics, setTopics] = useState([]);
-
+ 
     useEffect(() => {
         getTopics().then((topics) => {
             setTopics(topics)
