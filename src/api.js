@@ -7,7 +7,7 @@ export const getArticles = (query) => {
     params: {
       sort: query.sortingAttribute,
       order: query.sortingOrder,
-      topic: query.topic
+      topic: query.topic,
     },
   }).then(({data}) => {
     //   console.log(data.articles)
