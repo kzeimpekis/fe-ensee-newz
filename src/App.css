@@ -71,6 +71,12 @@ html{
   color: black;
 }
 
+.topic__link:hover {
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+  color: #416341;
+}
+
 /* Articles */
 .articles {
   width: 800px;
