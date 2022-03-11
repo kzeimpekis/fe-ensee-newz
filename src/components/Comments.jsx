@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getArticleCommentsById } from "../api";
 import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
+import Error404 from "./Error404";
+import Error500 from "./Error500";
 
 const Comments = ({comment_count, commentCounter, setCommentCounter}) => {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const {article_id} = useParams();
-    const navigate = useNavigate()
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         setIsLoading(true)
@@ -17,13 +19,11 @@ const Comments = ({comment_count, commentCounter, setCommentCounter}) => {
             setIsLoading(false);
         })
         .catch(({ response }) => {
-          if (response.status === 404) {
-            navigate("/Error404");
-          } else {
-            navigate("/Error500");
-          }
+          setIsError(true);
+          if (response.status === 404) {return <Error404 />}
+          else {return <Error500 />}
         });
-    }, [article_id, navigate])
+    }, [article_id])
 
     return (
         <div>
