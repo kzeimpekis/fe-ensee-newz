@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getTopics } from '../api';
+import Error404 from "./Error404";
+import Error500 from "./Error500";
 
 const TopicsList = () => {
     const [topics, setTopics] = useState([]);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         getTopics().then((topics) => {
             setTopics(topics)
-        })
+        }).catch(({ response }) => {
+            setIsError(true);
+            if (response.status === 404) {return <Error404 />}
+            else {return <Error500 />}
+          });
     }, [])
+
+    if (isError) {return <Error404/>}
 
     return (
         <nav>
