@@ -9,8 +9,8 @@ import { UserContext } from './contexts/UserContext'
 import Error404 from './components/Error404';
 
 function App() {
-  const [username, setUsername] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('jessjelly');
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [loginFailure, setLoginFailure] = useState(false);
 
   return (
