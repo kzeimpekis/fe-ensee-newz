@@ -12,6 +12,7 @@ const Articles = () => {
     const {topic_slug} = useParams();
     const [sortingAttribute, setSortingAttribute] = useState('created_at');
     const [sortingOrder, setSortingOrder] = useState('desc');
+    const [isError, setIsError] = useState(false)
     
     useEffect(() => {
         setIsLoading(true)
@@ -23,10 +24,13 @@ const Articles = () => {
           setArticles(articlesFromApi);
           setIsLoading(false);
         }).catch(({ response }) => {
-          if (response.status === 404) {<Error404 /> } 
-          else {<Error500 />}
+          setIsError(true)
+          if (response.status === 404) {return <Error404 /> } 
+          else {return <Error500 />}
         });
       }, [topic_slug, sortingAttribute, sortingOrder]);
+
+      if (isError) {return <Error404 />}
 
     return (
         <div>
