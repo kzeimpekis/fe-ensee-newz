@@ -67,6 +67,8 @@ html{
 
 .topic__link {
   margin-left: 10%;
+  text-decoration: none;
+  color: black;
 }
 
 /* Articles */
@@ -76,11 +78,44 @@ html{
   margin-right: auto;
 }
 
+.articles__header {
+  display: grid;
+  grid-template-areas: 'empty sorting posting';
+  grid-template-columns: 100px auto 100px;
+}
+
+.sorting {
+  grid-area: sorting;
+}
+
+.sorting__list {
+  padding: 0;
+}
+
+.sorting__list__element--deactivated {
+  list-style-type: none;
+  display: inline;
+  padding: 0px 30px;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sorting__list__element--activated {
+  list-style-type: none;
+  display: inline;
+  padding: 0px 30px;
+  color: #416341;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+}
+
 .article-card {
   margin: 0 auto 20px auto;
   width: 50rem;
   height: 10rem;
-  background-color: #c7dac7;
+  background-color: #92db92;
   border-radius: 8px;
 }
 
